@@ -169,4 +169,54 @@ system.cpu_clk_domain.clock                      1000                       # Cl
 ..
 ```
 
-Το **system.clk_domain.clock** είναι η συχνότητα ρολογιού του **συστήματος** ενώ το **system.cpu_clk_domain.clock** είναι η συχνότητα ρολογιού της **CPU**. Τόσο η συχνότητα της CPU όσο και η συχνοτητα του συστήματος είναι **1GHz**, αφού η περίοδος είναι 1000 ticks (1 tick = 1 picosecond), δηλαδή είναι **1ns**.
+Το **system.clk_domain.clock** είναι η συχνότητα ρολογιού του **συστήματος** ενώ το **system.cpu_clk_domain.clock** είναι η συχνότητα ρολογιού της **CPU**. Τόσο η συχνότητα της CPU όσο και η συχνοτητα του συστήματος είναι **1GHz**, αφού η περίοδος είναι 1000 ticks (1 tick = 1 picosecond), δηλαδή είναι **1ns**. Η συχνότητα ρολογιού της CPU χρονίζει όλα τα ψηφιακά συστήματα στοεσωτερικό του επεξεργαστή. Δηλαδή χρονίζει την ALU, την Control Unit καθώς και τις Level 1 και Level 2 Caches οι οποίες βρίσκονται στο εσωτερικό της CPU. Η συχνότητα του συστήματος χρονίζει τα περιφερειακά συστήματα και πιο συγκεκτριμένα στο μοντέλο _System-Call Emulation (SE)_, χρονίζει την μνήμη RAM (ή αλλιώς DRAM, αφου αποτελείτε κυρίως απο DRAM,σε αντίθεση με τις Caches οπου αποτελούνται απο SRAM). 
+
+Για να επιβεβαιώσουμε αυτά που είπαμε παραπάνω μπορούμε να δούμε τα συγκεκριμένα αποτελέσματα του confings.ini.
+
+```ruby
+[system.clk_domain]
+type=SrcClockDomain
+clock=1000
+domain_id=-1
+eventq_index=0
+init_perf_level=0
+voltage_domain=system.voltage_domain
+..
+[system.cpu_clk_domain]
+type=SrcClockDomain
+clock=1000
+domain_id=-1
+eventq_index=0
+init_perf_level=0
+voltage_domain=system.cpu_voltage_domain
+..
+[system.cpu]
+clk_domain=system.cpu_clk_domain
+..
+[system.cpu.dcache]
+clk_domain=system.cpu_clk_domain
+..
+[system.cpu.icache]
+clk_domain=system.cpu_clk_domain
+..
+[system.dvfs_handler]
+sys_clk_domain=system.clk_domain
+..
+[system.l2]
+clk_domain=system.cpu_clk_domain
+..
+[system.mem_ctrls]
+clk_domain=system.clk_domain
+..
+[system.mem_ctrls.dram]
+clk_domain=system.clk_domain
+..
+[system.membus]
+clk_domain=system.clk_domain
+..
+[system.tol2bus]
+clk_domain=system.cpu_clk_domain
+..
+```
+
+Όπως βλεπουμε και από το config.ini, αυτά τα οποία είπαμε παραπάνω επιβεβαιώνονται καθώς τα dcache, icache, l2cache, cpu χρονίζονται με cpu_clk_domain το οποίο είναι η συχνότητα CPU, ενώ η DRAM 
