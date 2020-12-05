@@ -237,10 +237,10 @@ clk_domain=system.cpu_clk_domain
 
 ![](Graphs/SPECBZIG.png =250x250)
 
-![photo](Graphs/SPECHMMER.png)
+![](Graphs/SPECHMMER.png)
 
-![photo](Graphs/SPECLIBM.png)
+![](Graphs/SPECLIBM.png)
 
-![photo](Graphs/SPECMCF.png)
+![](Graphs/SPECMCF.png)
 
-![photo](Graphs/SPECSJENG.png)
+![](Graphs/SPECSJENG.png)
