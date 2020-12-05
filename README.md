@@ -236,3 +236,11 @@ clk_domain=system.cpu_clk_domain
 |L2Cache Miss Rate| 0.055082     | 0.295238       | 0.999944        | 0.937422        | 0.999972        |
 
 ![photo](Graphs/SPECBZIG.png)
+
+![photo](Graphs/SPECHMMER.png)
+
+![photo](Graphs/SPECLIBM.png)
+
+![photo](Graphs/SPECMCF.png)
+
+![photo](Graphs/SPECSJENG.png)
