@@ -235,14 +235,12 @@ clk_domain=system.cpu_clk_domain
 |ICache Miss Rate| 0.023625      | 0.000077       | 0.000093        | 0.095117        | 0.000020        |
 |L2Cache Miss Rate| 0.055082     | 0.295238       | 0.999944        | 0.937422        | 0.999972        |
 
-<img src="Graphs/SPECBZIG.png" width="48">
+<img src="Graphs/SPECBZIG.png" width="150">
 
-![](Graphs/SPECBZIG.png | width=100)
+<img src="Graphs/SPECHMMER.png" width="150">
 
-![](Graphs/SPECHMMER.png)
+<img src="Graphs/SPECLIBM.png" width="150">
 
-![](Graphs/SPECLIBM.png)
+<img src="Graphs/SPECMCF.png" width="150">
 
-![](Graphs/SPECMCF.png)
-
-![](Graphs/SPECSJENG.png)
+<img src="Graphs/SPECSJENG.png" width="150">
