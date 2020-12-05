@@ -1,13 +1,14 @@
 
-
+/// Changes only in L1d,L1i,L2 cache sizes
 speclib_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 speclib_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
-speclib_4 -> "-l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+speclibm_4 -> "-l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 speclibm_3 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 speclibm_2 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz "
 speclibm_1 -> "--l1d_size=16kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 speclibm_0 -> "--l1d_size=16kB --l1i_size=16kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 
+/// Changes only in L1d,L1i,L2 cache sizes
 specbzip_0 -> "--l1d_size=32kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specbzip_1 -> "--l1d_size=64kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specbzip_2 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
@@ -16,12 +17,30 @@ specbzip_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 -
 specbzip_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specbzip_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 
+/// Changes only in L1d,L1i,L2 cache sizes
 specjeng_0 -> " --l1d_size=32kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specjeng_1 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specjeng_2 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 spejeng_3 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specjeng_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specjeng_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+
+/// Changes only in L1d,L1i,L2 cache sizes
+specmcf_0 -> "--l1d_size=32kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specmcf_1 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specmcf_2 -> "--l1d_size=128kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specmcf_3 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specmcf_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specmcf_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+
+/// Changes only in L1d,L1i,L2 cache sizes
+spechmmer_0 -> "--l1d_size=32kB --l1i_size=64kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+spechmmer_1 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz" 
+spechmmer_2 -> "--l1d_size=128kB --l1i_size=64kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+spechmmer_3 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+spechmmer_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+spechmmer_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+
 
 
 

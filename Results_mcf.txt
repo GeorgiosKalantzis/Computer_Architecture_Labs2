@@ -1,0 +1,7 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overall_miss_rate::total	system.cpu.icache.overall_miss_rate::total	system.l2.overall_miss_rate::total
+specmcf_0	1.102247	0.003205	0.000034	0.541138
+specmcf_1	1.099705	0.002586	0.000034	0.667579
+specmcf_2	1.097279	0.002198	0.000034	0.788200
+specmcf_3	1.097201	0.002198	0.000029	0.790158
+specmcf_4	1.095253	0.002198	0.000029	0.732935
+specmcf_5	1.093063	0.002198	0.000029	0.678286
