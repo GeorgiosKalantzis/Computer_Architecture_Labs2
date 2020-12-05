@@ -1,0 +1,30 @@
+
+///////////////// ONLY CHANGES IN THE CACHES SIZE , NOT IN THEIR ASSOCIATIVITIES NEITHER CACHE LINES //////////////////////
+
+speclib_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB"
+speclib_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB"
+speclib_4 -> "-l1d_size=128kB --l1i_size=128kB --l2_size=512kB"
+speclibm_3 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB"
+speclibm_2 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB "
+speclibm_1 -> "--l1d_size=16kB --l1i_size=64kB --l2_size=512kB"
+speclibm_0 -> "--l1d_size=16kB --l1i_size=16kB --l2_size=512kB"
+
+specbzip_0 -> "--l1d_size=32kB --l1i_size=32kB --l2_size=512kB"
+specbzip_1 -> "--l1d_size=64kB --l1i_size=32kB --l2_size=512kB"
+specbzip_2 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB"
+specbzip_3 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB"
+specbzip_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB"
+specbzip_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB"
+specbzip_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB"
+
+specjeng_0 -> " --l1d_size=32kB --l1i_size=64kB --l2_size=512kB"
+specjeng_1 -> "--l1d_size=64kB --l1i_size=64kB --l2_size=512kB"
+specjeng_2 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB"
+spejeng_3 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB"
+specjeng_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB"
+specjeng_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB"
+
+
+
+
+
