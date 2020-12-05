@@ -235,3 +235,4 @@ clk_domain=system.cpu_clk_domain
 |ICache Miss Rate| 0.023625      | 0.000077       | 0.000093        | 0.095117        | 0.000020        |
 |L2Cache Miss Rate| 0.055082     | 0.295238       | 0.999944        | 0.937422        | 0.999972        |
 
+![photo](SPECBZIG.png)
