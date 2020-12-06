@@ -313,7 +313,7 @@ clk_domain=system.cpu_clk_domain
 |specsjeng_10	 | 128kB       |128kB       | 512kB        |  4       | 4       | 4       | 128        |3.715485	 |
 |specsjeng_11	 | 128kB       | 128kB       | 512kB        | 4       | 4       | 4       | 256        |3.715483	 |
 |specsjeng_20	 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.236172	 |
-|specsjeng_21	 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.002167| 
+|specsjeng_21	 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 1024        |3.002167| 
 
 <img src="Graphs/chart.png" width="700">
 
