@@ -315,7 +315,7 @@ clk_domain=system.cpu_clk_domain
 |specsjeng_20	 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.236172	 |
 |specsjeng_21	 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.002167| 
 
-<img src="Graphs/chart1.png" width="700">
+<img src="Graphs/chart.png" width="700">
 
 #### Ερώτημα 3
 
