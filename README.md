@@ -358,7 +358,7 @@ clk_domain=system.cpu_clk_domain
 |speclibm_11     | 128kB       | 128kB       | 2048kB        | 8       | 8       | 8       | 256        |1.654384	|
 |speclibm_12     | 64kΒ      | 64kB       | 1024kB         |  8      |  8     |  8     | 256        |1.654755	|
 
-
+<img src="Graphs/chart3.png" width="700">
 
 
 
