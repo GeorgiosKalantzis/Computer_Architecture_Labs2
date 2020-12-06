@@ -75,7 +75,7 @@ tag_latency=20
 | Resp. latency | 2              | 2              | 20              |
 | Tag   latency | 2              | 2              | 20              | 
 | Data  latency | 2              | 2              | 20              |
-| Associetivity | 2              | 2              | 16              | 
+| Associetivity | 2              | 2              | 8               | 
 | Miss Stat. Reg.| 4             | 4              | 8               |
 | Size          | 64kB           | 32kB           | 2MB             |
 
