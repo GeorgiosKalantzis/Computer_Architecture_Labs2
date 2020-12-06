@@ -370,10 +370,10 @@ clk_domain=system.cpu_clk_domain
 | Parameters                         |           |
 | -----------------------------------|-----------|           
 | L1 instruction cache size          | X1 = 1.7u |
-| L1 instruction cache associativity | X2 = 1.4u |
-| L1 data cache size                 | X3 = 1.7u |
-| L1 data cache associativity        | X4 = 1.4u |
-| L2 cache size                      | X5 = u    |
+| L1 data cache size                 | X2 = 1.7u |
+| L2 cache size                      | X3 = u    |
+| L1 instruction cache associativity | X4 = 1.4u |
+| L1 data cache associativity        | X5 = 1.4u |
 | L2 cache associativity             | X6 = u    |
 | Μέγεθος cache line                 | X7 = 0    |
 
