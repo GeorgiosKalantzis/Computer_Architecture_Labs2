@@ -16,6 +16,17 @@ specbzip_3 -> "--l1d_size=64kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --
 specbzip_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specbzip_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specbzip_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+/// Now also changes in assosiativities
+specbzip_7 -> "--l1d_size=32kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specbzip_8 -> "--l1d_size=32kB --l1i_size=32kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specbzip_9 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+specbzip_10 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=64 --cpu-clock=1GHz"
+specbzip_11 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=64 --cpu-clock=1GHz"
+specbzip_12 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=64 --cpu-clock=1GHz"
+// And now also change in cacheline size
+specbzip_13 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=1 --cacheline_size=128 --cpu-clock=1GHz"
+specbzip_14 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=128 --cpu-clock=1GHz"
+specbzip_15 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=256 --cpu-clock=1GHz"
 
 /// Changes only in L1d,L1i,L2 cache sizes
 specjeng_0 -> " --l1d_size=32kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
@@ -32,6 +43,10 @@ specmcf_2 -> "--l1d_size=128kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l
 specmcf_3 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specmcf_4 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=1024kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
 specmcf_5 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+// Now also changes in associativities
+specmcf_6 -> "--l1d_size=128kB --l1i_size=128kB --l2_size=2048kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
+
+////// !!!!!!!!!!!!!!!! TO SEE THE REST SPECIFICATIONS ,CHECK THE AUTOMATION SCRIPT !!!!!!!!!!!!!!!!!!!!!!!!!!!///////////////////////
 
 /// Changes only in L1d,L1i,L2 cache sizes
 spechmmer_0 -> "--l1d_size=32kB --l1i_size=64kB --l2_size=2048kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=2 --cacheline_size=64 --cpu-clock=1GHz"
