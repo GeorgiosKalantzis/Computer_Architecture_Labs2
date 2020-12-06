@@ -257,6 +257,7 @@ clk_domain=system.cpu_clk_domain
 Θα δημιουργήσουμε μεταβλητές κόστους για κάθε παράμετρο του σύστηματος,ανάλογα με το κόστος που προσδίδουν όταν τις μεταβάλλουμε.Δηλαδή έστω μια αυθαίρετη μόναδα κόστους u, αναθέτουμε τις τιμές κόστους για μια "base" περίπτωση , όπου L1i.size = 16kb , L1d.size = 16kb, L2.size = 16kb ,L1i.assoc = 1, L1d.assoc = 1, L2.assoc = 1 και cacheline.size = 64:
 
 | L1 instruction cache size          | X1 = 1.7u |
+| -------------                      | -------------|
 | L1 instruction cache associativity | X2 = 1.4u |
 | L1 data cache size                 | X3 = 1.7u |
 | L1 data cache associativity        | X4 = 1.4u |
