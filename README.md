@@ -252,6 +252,71 @@ clk_domain=system.cpu_clk_domain
 
 #### Α.
 
+Στο ερώτημα αυτό θα προσπαθήσουμε να αλλάξουμε διάφορες παραμέτρους του συστήματος και μελετήσουμε την απόδοση του κάθε benchmark. Πιο συγκεκριμένα, θα αλλάξουμε τις εξής παραμέτρους.
+
+```ruby
+‐ L1 instruction cache size
+‐ L1 instruction cache associativity
+‐ L1 data cache size
+‐ L1 data cache associativity
+‐ L2 cache size
+‐ L2 cache associativity
+‐ Cache Line Size
+```
+
+Αρχικά, ας πούμε λίγα λόγια για την εκτέλεση του κάθε benchmark με τις default τιμές και για CPU Frequency **1GHz**. Δηλαδή, για τα αποτελέσματα του παραπάνω πίνακα.
+
+#### SPECSJENG
+
+Είναι το πιο αργό από τα 5 benchmark καθώς έχει **CPI = 7.05** και χρόνο εκτέλεσης **Ex. Time = 0.7** (για **commited instructions = 100000000**). Αυτό οφείλεται στο γεγονός ότι έχει 12.18% Data Cache Miss Rate καθώς και ότι κάνει πάρα πολλές φορές access την Level 2 Cache, λόγω του ότι έχει πάρα πολλά δεδομένα. 
+`system.l2.overall_accesses::total              723580 `
+Ένας τρόπος με τον οποίο αντιμετωπίσαμε παρακάτω το υψηλό αυτό **CPI** είναι η εκμετάλευση του **locality** της μνήμης. Δηλαδή, αυξήσαμε το **Cache Line Size** ή αλλιώς **Cache Block Size**.
+
+#### SPECHMMER
+
+Το συγκεκριμένο benchmark έχει **CPI=5.68** και αυτό οφείλεται στο σχετικά υψηλό **Data Cache Miss Rate** που είναι **5.57%** καθώς και το **Instruction Cache Miss Rate** που είναι **9.5%** Εδώ βλέπουμε και τα συνολικά misses.
+`system.cpu.icache.overall_misses::total           563`
+`system.cpu.dcache.overall_misses::total           304`
+Έπειτα από αρκετές προσομοιώσεις με διαφορετικές παραμέτρους παρατηρήθηκε ότι τόσο η αύξηση μεγέθους των Caches όσο και η αύξηση του Associativity δεν είχαν ιδιέταιρο impact στην απόδοση του benchmarck. Αυτό το οποίο επηρέασε αρκετά την απόδοση του, όπως και πριν, ήταν η εκμετάλλευση του **locality**, δηλαδή η αύξηση της γραμμής της Cache. 
+
+#### SPECLIBM
+
+Το συσγκεκριμένο benchmark έχει **CPI=2.62**. Τα Miss Rates της Instruction Cache είναι αρκετά ικανοποιητικό, ενώ το Data Cache Miss Rate είναι **6.09%**, συνεπώς είναι ένας βασικός παράγοντας του υψηλού CPI. Ένας όμως ακόμα μεγαλύτερος παράγοντας είναι το το υψηλό Miss Rate της Level 2 Cache, το οποίο είναι **99.99%**. Εδω βλεπουμε και τα συνολικά accesses. `system.cpu.dcache.demand_accesses::total     48795261 ` `system.cpu.dcache.overall_misses::total       2975121` `system.cpu.icache.overall_accesses::total      6046326` `system.cpu.icache.overall_miss_latency::total     51833000` `system.l2.overall_accesses::total             1488194` `system.l2.overall_misses::total               1488111`. ΄Οπως και στα προηγούμενα benchmark, ο τρόπος με τον οποίο θα προσπαθήσουμε να μειώσουμε το CPI είναι με το να εκμετελευτούμε την χωρική τοπικότητα.
+
+#### SPECBZIG
+
+Το συγκεκριμένο benchmark έχει σχετικά καλό CPI και αυτό φαίνεται και από το γεγονός ότι έχει αρκετά καλά Miss Rates για τις Level 1 και Level 2 Caches. Παρ' όλα αυτά η Level 2 Cache έχει αξιοσημείωτο Miss Rate το οποίο θα προσπαθήσουμε και να βελτιώσουμε. `system.l2.demand_accesses::total               683661` `system.l2.overall_misses::total                201843`. Επίσης αυτό το οποίο θα παρατηρήσουμε με τις προσωμοιώσεις είναι ότι το locality στο συγκεκριμένο benchmark δεν έχει και τόσο μεγάλο impact όσο είχε στα προηγούμενα benchmarks. Αυτο το οποίο θα κάνουμε είναι να αυξήσουμε το μέγεθος και το associetivity των caches ώστε να μειώσουμε τα misses ακόμα περισσότερο και να αυξήσουμε την απόδοση του benchmark.
+
+#### SPECMCF
+
+Αυτό το benchmark είναι το καλύτερο απ' όλα και αυτό φαίνεται από το πολύ μικρό CPI το οποίο έχει. Συγκεριμένα έχει **CPI=1.27**. Αυτό είναι λογικό καθώς τα miss rates των caches είναι αρκετά μικρά. `system.l2.overall_accesses::total              723580` `system.l2.overall_misses::total                 39856` `system.cpu.dcache.overall_accesses::total     35735088` `system.cpu.dcache.overall_misses::total         74281` `system.cpu.icache.overall_accesses::total     28313755` `system.cpu.icache.overall_misses::total        668904`. 
+
+
+#### B.
+
+#### SPECSJENG
+
+Στο παρακάτω διάγραμμα παρατηρούμε στον κατακόρυφο άξονα το CPI και στον οριζόντιο άξονα μερικές από τις προσομοιώσεις που έγιναν. Οι παράμετροι των προσομοιώσεων αυτών φαίνονται στον παρακάτω πίνακα. Αυτό το οποίο μπορόυμε να παρατηρήσουμε είναι η μεγάλη συνεισφορά που έχει η χωρική τοπικότητα, καθώς βλεπουμε ότι αυξάνοντας το Cache Line Size μειώνεται και το CPI. Ενω επίσης παρατηρούμε ότι τόσο το Cache Size όσο και το associativity έχουν αρκετά μικρό impact στην απόδοση του benchmark.
+
+|               | l1d_size        | l1i_size       | l2_size        | l1i_assoc       | l1d_assoc       | l2_assoc     | cacheline_size  | cpi    |
+| ------------- | -------------  | -------------  | -------------   | -------------   | -------------   | -------------   | -------------  | ------------- |
+|specmcf_0 | 32kB       | 64kB       |512kB         | 1       | 1       | 2       | 64        |7.056530        |
+|specmcf_1| 64kB       | 64kB      | 512kB          | 1       |  1       | 2       | 64        |7.056086	 |
+|specmcf_2| 128kB      | 64kB       |512kB        | 1        | 1      | 2       | 64        | 7.056053	|
+|specmcf_3| 128kB      | 128kB       | 512kB       | 1        | 1       | 2      | 64        | 7.055731	| 
+|specmcf_4| 128kB     | 128kB       | 1024kB         | 1        | 1       | 2       | 64        | 7.055338	|
+|specmcf_5 | 128kB       | 128kB       | 2048kB       | 1       | 1       | 2       | 64        |7.054478	 |
+|specmcf_6 | 128kB       | 128kB       | 2048kB        | 2       | 2       | 2       | 64        |7.054221	|
+|specmcf_7 | 128kB      | 128kB       | 512kB        | 4        | 4       | 4       | 64        |7.054338	|
+|specmcf_8 | 128kB      |128kB       | 512kB        | 8       | 8       | 8       | 64        |7.054502	 | 
+|specmcf_9 | 128kB     | 128kB      | 512kB         | 8       | 8       | 8       | 64        | 4.985786	|
+|specmcf_10 | 128kB       |128kB       | 512kB        |  4       | 4       | 4       | 128        |3.715485	 |
+|specmcf_11| 128kB       | 128kB       | 512kB        | 4       | 4       | 4       | 256        |3.715483	 |
+|specmcf_20 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.236172	 |
+
+
+![]()
+
 #### Ερώτημα 3
 
 Θα δημιουργήσουμε μεταβλητές κόστους για κάθε παράμετρο του σύστηματος,ανάλογα με το κόστος που προσδίδουν όταν τις μεταβάλλουμε.Δηλαδή έστω μια αυθαίρετη μόναδα κόστους u, αναθέτουμε τις τιμές κόστους για μια "base" περίπτωση , όπου  
