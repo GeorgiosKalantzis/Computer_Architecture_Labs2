@@ -315,7 +315,7 @@ clk_domain=system.cpu_clk_domain
 |specmcf_20 | 32kB      | 64kB       | 512kB         |  1      |  1     |  2     | 512        |3.236172	 |
 
 
-![]()
+<img src="Graphs/chart1.png" width="400">
 
 #### Ερώτημα 3
 
