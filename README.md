@@ -343,6 +343,7 @@ clk_domain=system.cpu_clk_domain
 |spechmmer_28 	 | 128kB       |128kB       | 512kB        |  8       | 8       | 8       | 256        |3.867043	|
 |spechmmer_29	 | 128kB       | 128kB       | 512kB        | 4       | 4       | 4       | 512        |3.675353	 |
 |spechmmer_30	 | 64kΒ      | 64kB       | 512kB         |  4      |  4     |  4     | 512        |3.703423	 |
+|spechmmer_31	 | 32kΒ      | 64kB       | 512kB         |  1      |  1     |  2     | 1024        |4.852867	 |
 
 <img src="Graphs/chart2.png" width="700">
 
