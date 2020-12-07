@@ -450,4 +450,59 @@ To benchmark αυτό είναι ήδη αρκετά αποδοτικό, συπ�
 
 C(u) = 4X1 + 2X2 + 2X3 + 2X4 + 2X5 + 4X6 + 2X7 = (6.8 + 2.8 + 3.4 + 2.8 + 2 + 4 )u = 21.8u
 
+Τα βάρη της συνάρτησης κόστος επιλέχθηκαν έτσι ώστε να αντιπροσωπέυουν τα μεγέθη κόστους του υλικού που χρησιμοποιόυμε. Η L1 cache ανατίθεται μεγάλο βάρος και σε size και σε associativities (Instruction cache και data cache), συγκριτικά με την L2 καθώς είναι γνωστό ότι η κατασκευή της είναι πολύ πιο δαπανηρή. Το μέγεθος τις cache line δεν έχει κάποιο κόστος υλοποίησης. Επίσης τα associativities φυσικά και προσθέτουν και αυτά κόστος , μιας και προσθέτουν έξτρα υλικό στο σύστημα (συγκριτές) και αυξάνουν την πολυπλοκότητα.
 
+Έπειτα υλοποιήθηκε ένα python script , το οποίο μας βοήθησε να υπολογίζουμε τις συναρτήσεις κόστους που προκύπτουν από τις παραμέτρους των simulations και δημιουργήσαμε ένα plot 
+CPI vs Cost . Παρακάτω φαίνεται ένα μέρος του κώδικα.
+```
+import matplotlib.pyplot as plt
+
+
+c = lambda x1,x2,x3,x4,x5,x6,x7 : 2.6*x1 + 2.6*x2 + x3 + 2.6*x4 + 2.6*x5 + x6 + 0*x7
+
+
+costsLibm = []
+costsbzip = []
+costsjeng = []
+costsmcf = []
+costshmmer = []
+
+for x in parametersLibm:
+    
+    costsLibm.append(c(x[0],x[1],x[2],x[3],x[4],x[5],x[6]))
+    
+for x in parametersbzip:
+    
+    costsbzip.append(c(x[0],x[1],x[2],x[3],x[4],x[5],x[6]))
+    
+for x in parametersjeng:
+    
+    costsjeng.append(c(x[0],x[1],x[2],x[3],x[4],x[5],x[6]))
+    
+for x in parametersmcf:
+    
+    costsmcf.append(c(x[0],x[1],x[2],x[3],x[4],x[5],x[6]))
+    
+for x in parametershmmer:
+    
+    costshmmer.append(c(x[0],x[1],x[2],x[3],x[4],x[5],x[6]))
+    
+
+    
+plt.figure(figsize=(10,6))  
+plt.scatter(costsjeng,sjengCPI,c = 'r', label = 'Sjeng')
+plt.scatter(costsLibm,LibmCPI, c = 'b', label = 'Libm')
+plt.scatter(costsbzip,bzipCPI, c = 'g', label = 'Bzip' )
+plt.scatter(costshmmer,hmmerCPI, c = 'k', label = 'Hmmer')
+plt.scatter(costsmcf,mcfCPI,c ='y',label= 'Mcf')
+plt.ylabel('CPI')
+plt.xlabel('Cost in units(u)')
+plt.legend()
+
+plt.show()
+```
+Και το plot που παράχθηκε είναι το εξής :
+
+<img src="Graphs/plot.png" width="700">
+
+Στο οποίο φαίνονται και τα 5 benchmark. Είναι ξεκάθαρο και από το διάγραμμα το θετικό impact που έχει το cache line size , εφόσον χωρίς να προσθέτει κάποιο κόστος υλοποίησης ρίχνει δραματικά το CPI . Επίσης παρατηρούμε από το διάγραμμα ότι η αύξηση των μεγεθών της L2 και L1 caches δεν μείωνουν ικανοποιητικά το CPI , γι αυτό το λόγο και τα διαγράμματα έχουν μια "Γ" μορφή.
