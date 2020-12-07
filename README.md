@@ -330,20 +330,26 @@ clk_domain=system.cpu_clk_domain
 
 |               | l1d_size        | l1i_size       | l2_size        | l1i_assoc       | l1d_assoc       | l2_assoc     | cacheline_size  | cpi    |
 | ------------- | -------------  | -------------  | -------------   | -------------   | -------------   | -------------   | -------------  | ------------- |
-|spechmmer_0 	 | 32kB       | 64kB       |2048kB         | 1       | 1       | 2       | 64        |5.618177	        |
-|spechmmer_1 	| 64kB       | 64kB      | 2048kB          | 1       |  1       | 2       | 64        |5.605637	 |
-|spechmmer_2 	| 128kB      | 64kB       |2048kB        | 1        | 1      | 2       | 64        | 5.589006	|
-|spechmmer_3 	| 128kB      | 128kB       |2048kB       | 1        | 1       | 2      | 64        | 5.589006	| 
-|spechmmer_4 	| 128kB     | 128kB       | 1024kB         | 1        | 1       | 2       | 64        | 5.589006	|
-|spechmmer_5 	 | 128kB       | 128kB       | 512kB       | 1       | 1       | 2       | 64        |5.589006	|
-|spechmmer_6 	 | 128kB       | 128kB       | 512kB        | 2       | 2       | 2       | 64        |5.505899	|
-|spechmmer_7 	 | 128kB      | 128kB       | 512kB        | 4        | 4       | 4       | 64        |5.505899	|
-|spechmmer_8 	 | 128kB      |128kB       | 512kB        | 8       | 8       | 8       | 64        |5.505899	| 
-|spechmmer_27 	 | 128kB     | 128kB      | 512kB         | 8       | 8       | 8       | 128        |4.430572	|
-|spechmmer_28 	 | 128kB       |128kB       | 512kB        |  8       | 8       | 8       | 256        |3.867043	|
-|spechmmer_29	 | 128kB       | 128kB       | 512kB        | 4       | 4       | 4       | 512        |3.675353	 |
-|spechmmer_30	 | 64kΒ      | 64kB       | 512kB         |  4      |  4     |  4     | 512        |3.703423	 |
-|spechmmer_31	 | 32kΒ      | 64kB       | 512kB         |  1      |  1     |  2     | 1024        |4.852867	 |
+|specbzip_0	 	 | 32kB       | 32kB       |512kB         | 1       | 1       | 2       | 64        |1.712606		        |
+|specbzip_1	 	| 64kB       | 32kB      | 512kB          | 1       |  1       | 2       | 64        |1.673547		 |
+|specbzip_2	 	| 64kB      | 64kB       |512kB        | 1        | 1      | 2       | 64        | 1.673150		|
+|specbzip_3	 	| 64kB      | 128kB       |512kB       | 1        | 1       | 2      | 64        |1.673150		| 
+|specbzip_4	 	| 128kB     | 128kB       | 512kB         | 1        | 1       | 2       | 64        | 1.637846	|
+|specbzip_5	 	 | 128kB       | 128kB       | 1024kB       | 1       | 1       | 2       | 64        |1.614752	|
+|specbzip_6	 	 | 128kB       | 128kB       | 2048kB        | 1       | 2       | 2       | 64        |1.594147	|
+|specbzip_7	 	 | 32kB      | 32kB       | 512kB        | 2        | 2       | 2       | 64        |1.689497	|
+|specbzip_8	 	 | 32kB      |32kB       | 512kB        | 4       | 4       | 2       | 64        |1.675726		| 
+|specbzip_9	 	 | 128kB     | 128kB      | 512kB         | 4       | 4       | 2       | 64        |1.620835	|
+|specbzip_10 	 | 128kB       |128kB       | 512kB        |  4       | 4       | 4       | 64        |1.620440	|
+|specbzip_11	 | 128kB       | 128kB       | 512kB        | 4       | 4       | 8       | 64        |1.619719	|
+|specbzip_12	 | 128kB      | 128kB       | 512kB         |  1      |  1     |  1     | 64        |1.648521	|
+|specbzip_13	 | 128kB      | 128kB       | 512kB         |  1      |  1     |  1     | 128        |1.643754	|
+|specbzip_14 	 | 128kB      |128kB       | 512kB        | 4       | 4       | 4       | 128        |1.608345	| 
+|specbzip_15 	 | 128kB     | 128kB      | 512kB         | 4       | 4       | 4       | 256        |1.613029	|
+|specbzip_20 	 | 32kB       |32kB       | 512kB        |  1       | 1       | 2       | 512        |1.845058	|
+|specbzip_21	 | 32kB       | 32kB       | 512kB        | 1       | 1       | 2       | 1024        |2.099350	|
+|specbzip_42	 | 128kB      | 128kB       | 4MB         |  16      |  16     |  8     | 128        |1.546864	 |
+|specbzip_47	 | 128kB      | 128kB       | 4MB         |  16      |  16     |  8     | 256        |1.541780	 |
 
 <img src="Graphs/chart2.png" width="700">
 
@@ -372,7 +378,7 @@ clk_domain=system.cpu_clk_domain
 
 <img src="Graphs/chart4.png" width="700">
 
-#### SPECLIBM.
+#### SPECBZIG.
 
 |               | l1d_size        | l1i_size       | l2_size        | l1i_assoc       | l1d_assoc       | l2_assoc     | cacheline_size  | cpi    |
 | ------------- | -------------  | -------------  | -------------   | -------------   | -------------   | -------------   | -------------  | ------------- |
@@ -389,6 +395,8 @@ clk_domain=system.cpu_clk_domain
 |speclibm_10 	 | 128kB       |128kB       | 2048kB        |  8       | 8       | 8       | 128        |1.989960	|
 |speclibm_11     | 128kB       | 128kB       | 2048kB        | 8       | 8       | 8       | 256        |1.654384	|
 |speclibm_12     | 64kΒ      | 64kB       | 1024kB         |  8      |  8     |  8     | 256        |1.654755	|
+
+<img src="Graphs/chart5.png" width="700">
 
 #### Ερώτημα 3
 
