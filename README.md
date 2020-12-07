@@ -370,7 +370,7 @@ clk_domain=system.cpu_clk_domain
 |speclibm_61     | 128kΒ      | 128kB       | 4ΜΒ         |  32      |  32     |  16     | 2048        |1.375902   |
 
 
-<img src="Graphs/chart3.png" width="700">
+<img src="Graphs/chart4.png" width="700">
 
 #### SPECLIBM.
 
